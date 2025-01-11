@@ -4,7 +4,7 @@
 #include "le_arquivo.hpp"
 #include "sorteia_palavra.hpp"
 
-std::string sorteia_palavra(){
+std::string Forca::sorteia_palavra(){
     std::vector<std::string> palavras = le_arquivo();
 
     srand(time(NULL));

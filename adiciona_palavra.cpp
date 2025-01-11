@@ -5,7 +5,7 @@
 #include "salva_arquivo.hpp"
 #include "adiciona_palavra.hpp"
 
-void adiciona_palavra(){
+void Forca::adiciona_palavra(){
     std::cout << "Digite a nova palavra, usando letras maiúsculas." << std::endl;
     std::string nova_palavra;
     std::cin >> nova_palavra;

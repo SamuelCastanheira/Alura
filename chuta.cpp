@@ -2,7 +2,7 @@
 #include "letra_existe.hpp"
 #include "chuta.hpp"
 
-void chuta(std::map<char, bool> & chutou, std::vector<char> & chutes_errados, const std::string & palavra_secreta){
+void Forca::chuta(std::map<char, bool> & chutou, std::vector<char> & chutes_errados, const std::string & palavra_secreta){
     std::cout << "Seu chute: ";
     char chute;
     std::cin >> chute;

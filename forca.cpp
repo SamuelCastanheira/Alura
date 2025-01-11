@@ -16,6 +16,8 @@
 using namespace std;
 
 int main () {
+    using namespace std;
+    using namespace Forca;
     string palavra_secreta;
     map<char, bool> chutou;
     vector<char> chutes_errados;
@@ -25,7 +27,7 @@ int main () {
     palavra_secreta = sorteia_palavra();
 
     while(nao_acertou(palavra_secreta,chutou) && nao_enforcou(chutes_errados)){
-        imprime_erros(chutes_errados);
+        Forca::imprime_erros(chutes_errados);
 
         imprime_palavra(palavra_secreta,chutou);
 
