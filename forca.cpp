@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <map>
-#include <vector>
+#include <array>
 #include "nao_acertou.hpp"
 #include "nao_enforcou.hpp"
 #include "letra_existe.hpp"
@@ -13,25 +13,27 @@
 #include "sorteia_palavra.hpp"
 #include "salva_arquivo.hpp"
 #include "adiciona_palavra.hpp"
-using namespace std;
+
 
 int main () {
     using namespace std;
     using namespace Forca;
+
     string palavra_secreta;
     map<char, bool> chutou;
-    vector<char> chutes_errados;
+    array<char,5> chutes_errados;
+    int indice_chutes_errados=0;
 
     imprime_cabecalho();
 
     palavra_secreta = sorteia_palavra();
 
-    while(nao_acertou(palavra_secreta,chutou) && nao_enforcou(chutes_errados)){
-        Forca::imprime_erros(chutes_errados);
+    while(nao_acertou(palavra_secreta,chutou) && nao_enforcou(indice_chutes_errados)){
+        imprime_erros(chutes_errados,indice_chutes_errados);
 
         imprime_palavra(palavra_secreta,chutou);
 
-        chuta(chutou, chutes_errados, palavra_secreta);
+        chuta(chutou, chutes_errados,indice_chutes_errados, palavra_secreta);
     }
 
     cout << "Fim de jogo!" << endl;
@@ -49,6 +51,6 @@ int main () {
             adiciona_palavra();
         }
     }
-    
+
     cin.get();
 }

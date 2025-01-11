@@ -1,6 +1,5 @@
 #pragma once
-#include <vector>
 
 namespace Forca {
-	bool nao_enforcou(const std::vector<char>& chutes_errados);
+	bool nao_enforcou(const int quant_chutes_errados);
 }

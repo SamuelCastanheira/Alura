@@ -1,6 +1,6 @@
 #include "nao_enforcou.hpp"
 
 
-bool Forca::nao_enforcou(const std::vector<char> & chutes_errados){
-    return chutes_errados.size() < 5;
+bool Forca::nao_enforcou(const int quant_chutes_errados){
+    return quant_chutes_errados < 5;
 }
